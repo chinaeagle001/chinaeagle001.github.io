@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://chuxing.club">
   <title>BlockingQueue的使用 | 楚兴的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结||Throws exception|Special value|Blocks    | Tim">
+  <meta name="description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结     Throws exception Special value Blocks Times">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BlockingQueue的使用">
 <meta property="og:url" content="http://chuxing.club/2017/05/07/BlockingQueue的使用/index.html">
 <meta property="og:site_name" content="楚兴的博客">
-<meta property="og:description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结||Throws exception|Special value|Blocks    | Tim">
-<meta property="og:updated_time" content="2017-05-07T09:12:23.000Z">
+<meta property="og:description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结     Throws exception Special value Blocks Times">
+<meta property="og:updated_time" content="2017-05-07T09:15:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BlockingQueue的使用">
-<meta name="twitter:description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结||Throws exception|Special value|Blocks    | Tim">
+<meta name="twitter:description" content="从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。  BlockingQueue方法的总结     Throws exception Special value Blocks Times">
   
     <link rel="alternative" href="/atom.xml" title="楚兴的博客" type="application/atom+xml">
   
@@ -178,7 +178,41 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>从BlockingQueue取东西的操作将会被阻断进入等待状态，直到BlockingQueue进了东西才会被唤醒。同样，如果BlockingQueue是满的，任何试图往里存东西的操作也会被阻断进入等待状态，直到BlockingQueue里有空间才会被唤醒继续操作。 </p>
-<p><strong>BlockingQueue方法的总结</strong><br>||Throws exception|Special value|Blocks    | Times out|<br>|-|-|-|-|-|<br>|Insert    |add(e)    |offer(e)|    put(e)    |offer(e, time, unit)|<br>|Remove|    remove()    |poll()|    take()|    poll(time, unit)|<br>|Examine    |element()    |peek()    |not applicable|    not applicable|</p>
+<p><strong>BlockingQueue方法的总结</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Throws exception</th>
+<th>Special value</th>
+<th>Blocks</th>
+<th>Times out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insert</td>
+<td>add(e)</td>
+<td>offer(e)</td>
+<td>put(e)</td>
+<td>offer(e, time, unit)</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>remove()</td>
+<td>poll()</td>
+<td>take()</td>
+<td>poll(time, unit)</td>
+</tr>
+<tr>
+<td>Examine</td>
+<td>element()</td>
+<td>peek()</td>
+<td>not applicable</td>
+<td>not applicable</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p><strong>使用BlockingQueue的关键技术点</strong></p>
 <ol>
